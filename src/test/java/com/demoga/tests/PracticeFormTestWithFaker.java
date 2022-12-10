@@ -4,12 +4,14 @@ import com.codeborne.selenide.Configuration;
 import com.demoga.pages.PracticeFormPage;
 import com.demoga.utils.TestData;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class PracticeFormTestWithFaker extends TestData {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
     @Test
+    @Tag("choose_properties")
     void practiceFormTest() {
         practiceFormPage.openPage()
                 .setFirstName(firstName)

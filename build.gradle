@@ -34,6 +34,16 @@ dependencies {
     )
 }
 
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 tasks.withType(Test) {
     useJUnitPlatform()
 
@@ -45,4 +55,10 @@ tasks.withType(Test) {
     }
 }
 
-test {}
+// properties
+
+task choose_properties(type: Test) {
+    useJUnitPlatform {
+        includeTags "choose_properties"
+    }
+}
